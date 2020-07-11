@@ -3,9 +3,10 @@ global _start
 
 section .text
 _start: mov eax, 0
-again:  PRINT "Hello"
+again:  PRINT "Hello####"
         PUTCHAR 10
 	inc eax
-	cmp eax, 5
+	cmp eax, 10
 	jl again
 	FINISH
+
