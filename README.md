@@ -1,3 +1,3 @@
 # LearnAssembly
-My attempts to learn assembler
-I use NASM
+#My attempts to learn assembler
+#I use NASM
