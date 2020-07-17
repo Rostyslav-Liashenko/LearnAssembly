@@ -1,3 +1,5 @@
+%include "stud_io.inc"
+
 global _start
 
 
@@ -19,3 +21,4 @@ _start:
 		mov	ecx, 256
 		mov	al, '@'
 		call	fill_memory
+		FINISH
