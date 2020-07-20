@@ -35,9 +35,3 @@
 			
 ;example mov	eax,[arg1]
 ;example mov	[arg(7)],edx
-
-
-
-
-
-
