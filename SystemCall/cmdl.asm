@@ -9,7 +9,7 @@ strlen:
 	mov	ebp, esp
 	xor	eax, eax
 	mov	ecx, [ebp+8]
-.lp:	cmp	byte [eax+acx], 0
+.lp:	cmp	byte [eax+ecx], 0
 	jz	.quit
 	inc	eax
 	jmp	short .lp
@@ -45,3 +45,24 @@ print_str:
 	mov	esp, ebp
 	pop	ebp
 	ret
+_start:
+	mov	ebx, [esp]
+	mov	esi, esp
+	add	esi, 4
+again:	push 	dword [esi]
+	call	print_str
+	add	esp, 4
+	add	esi, 4
+	dec	ebx
+	jnz	again
+
+%ifdef OS_FREEBSD
+	push	dword 0
+	mov	eax, 1
+	push	eax
+	int 	80h
+%else
+	mov	ebx, 0
+	mov	eax, 1
+	int 	80h
+%endif
