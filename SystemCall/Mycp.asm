@@ -65,3 +65,10 @@
 %error Please define either OS_LINUX or OS_FREEBSD
 %endif
 %endmacro
+
+%ifdef OS_FREEBSD
+openwr_flags	equ 601h
+%eles :assume it's Linux
+openwr_flags	equ 241h
+%endif
+
