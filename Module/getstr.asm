@@ -3,7 +3,7 @@
 global getstr
 
 section .text
-getstr:		:arg 1 = addres buffer, arg2 = length
+getstr:		;arg 1 = addres buffer, arg2 = length
 	push	ebp
 	mov	ebp, esp
 	xor	ecx, ecx	
