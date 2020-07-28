@@ -1,5 +1,4 @@
-;; asmgreet/greet.asm ;;
-global _start
+global	_start
 extern	putstr
 extern	getstr
 extern	quit
@@ -14,17 +13,26 @@ buf	resb	512
 buflen	equ	$-buf
 
 section .text
-_start:	push	dword nmq
-	call	putstr
-	add	esp, 4
-	push	dword buflen
-	push	dword buf
-	call	getstr
-	add	esp, 8
-	push	dword pmy
-	call	putstr
-	add	esp, 4
-	push	dword exc
-	call	putstr
-	add	esp, 4
-	call 	quit
+_start:
+	push dword nmq
+	call putstr
+	add esp, 4
+
+	push dword buflen
+	push dword buf
+	call getstr
+	add esp, 8
+
+	push dword pmy
+	call putstr
+	add esp, 4
+
+	push dword buf
+	call putstr
+	add esp, 4
+
+	push dword exc
+	call putstr
+	add esp, 4
+
+	call quit
